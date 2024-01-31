@@ -1,9 +1,10 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18.x
     commands:
-
       - echo "Instalando Node.js 18.x..."
       - curl -sL https://deb.nodesource.com/setup_18.x | bash -
       - apt-get install -y nodejs
@@ -22,11 +23,9 @@ phases:
       - npm install
   build:
     commands:
-      # - echo testing...
-      # - echo building...
       - ng build --prod
 artifacts:
   files:
     - "**/*"
   discard-paths: no
-  base-directory: dist/ssr-medium
+  base-directory: dist
