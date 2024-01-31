@@ -1,1 +1,1 @@
-web: node ssr-medium/server/main.js
+web: node dist/ssr-medium/server/main.js
