@@ -3,20 +3,18 @@ version: 0.1
 phases:
   install:
     commands:
-      # Instalar Node.js 18.x
-      echo "Instalando Node.js 18.x..."
-      curl -sL https://deb.nodesource.com/setup_18.x | bash -
-      apt-get install -y nodejs
 
-      # Actualizar la lista de paquetes
-      apt-get update
+      - echo "Instalando Node.js 18.x..."
+      - curl -sL https://deb.nodesource.com/setup_18.x | bash -
+      - apt-get install -y nodejs
 
-      # Instalar Yarn
-      echo "Instalando Yarn..."
-      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-      echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-      apt-get update
-      apt-get install -y yarn
+      - apt-get update
+
+      - echo "Instalando Yarn..."
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      - apt-get update
+      - apt-get install -y yarn
   pre_build:
     commands:
       - echo installing dependencies...
