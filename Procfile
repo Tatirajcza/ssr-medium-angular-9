@@ -1,1 +1,1 @@
-web: node angular-ssr/server/main.js
+web: node ssr-medium/server/main.js
